@@ -41,6 +41,7 @@ test("adds a new item to the list when the form is submitted", () => {
 
   fireEvent.submit(screen.queryByText(/Add to List/));
 
+  // eslint-disable-next-line testing-library/prefer-presence-queries
   expect(screen.queryByText(/Ice Cream/)).toBeInTheDocument();
 
   expect(screen.queryAllByText(/Dessert/).length).toBe(dessertCount + 1);

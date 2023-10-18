@@ -44,6 +44,7 @@ test("the input field acts as a controlled input", () => {
 // Shopping List
 test("the shopping list displays all items when initially rendered", () => {
   const { container } = render(<ShoppingList items={testData} />);
+  // eslint-disable-next-line testing-library/no-container
   expect(container.querySelector(".Items").children).toHaveLength(
     testData.length
   );
