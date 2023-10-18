@@ -1,4 +1,3 @@
-// components/ItemForm.js
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 
@@ -10,14 +9,15 @@ function ItemForm({ onItemFormSubmit }) {
     e.preventDefault();
 
     const newItem = {
-      id: uuid(),
+      id: uuid(),  
       name: itemName,
       category: itemCategory,
     };
 
     onItemFormSubmit(newItem);
 
-    setItemName(""); // Clear the form after submission
+    // Clear the form after submission
+    setItemName("");
     setItemCategory("Produce");
   };
 
@@ -29,16 +29,11 @@ function ItemForm({ onItemFormSubmit }) {
           type="text"
           value={itemName}
           onChange={(e) => setItemName(e.target.value)}
-          aria-label="Name"
         />
       </label>
       <label>
         Category:
-        <select
-          value={itemCategory}
-          onChange={(e) => setItemCategory(e.target.value)}
-          aria-label="Category"
-        >
+        <select value={itemCategory} onChange={(e) => setItemCategory(e.target.value)}>
           <option value="Produce">Produce</option>
           <option value="Dairy">Dairy</option>
           <option value="Dessert">Dessert</option>
@@ -50,4 +45,3 @@ function ItemForm({ onItemFormSubmit }) {
 }
 
 export default ItemForm;
-
